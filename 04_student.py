@@ -11,4 +11,11 @@
 
 educational_grant, expenses = 10000, 12000
 
-# TODO здесь ваш код
+educational_grant_all = educational_grant * 10
+expenses_all = expenses
+expenses_prev = expenses
+for i in range(1, 10):
+    expenses_prev += expenses_prev * 0.1
+    expenses_all += expenses_prev
+
+print("Student must ask for ", expenses_all - educational_grant_all, "rub")
