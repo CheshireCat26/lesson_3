@@ -21,8 +21,11 @@ def draw_brick(left_right_corner):
     sd.line(point_c, point_d)
 
 
-for x in range(0, width, 100):
+for x in range(-100, width + 100, 100):
     for y in range(0, height, 50):
-        draw_brick(sd.Point(x, y))
+        if ((y // 50) % 2) != 0:
+            draw_brick(sd.Point(x - 50, y))
+        else:
+            draw_brick(sd.Point(x, y))
 
 sd.pause()
